@@ -14,7 +14,10 @@ class MyApp extends StatelessWidget {
     final materialTheme = MaterialTheme(ThemeData.light().textTheme);
     return MaterialApp(
       title: 'Sleepy Time',
-      theme: materialTheme.light(),
+      theme: materialTheme.light().copyWith(
+          appBarTheme: AppBarTheme(
+              iconTheme: IconThemeData(
+                  color: Theme.of(context).colorScheme.onPrimary, size: 34))),
       darkTheme: materialTheme.dark(),
       themeMode: ThemeMode.system,
       home: const HomeView(title: 'Sleepy Time'),
